@@ -4,7 +4,7 @@ import React,{useState,useEffect} from 'react'
 const socketClient = require('socket.io-client')
 const  io = socketClient.io
 //Socket connection with the server
-let socket = new io('http://localhost:5000')
+let socket = new io('http://192.168.35.195:5000')
 
 // let sender = "peter@gmail.com"
 // let receiver = "paul@gmail.com"
@@ -28,7 +28,7 @@ useEffect(()=>{
   if(sender){
   nsender = sender.toLowerCase()+'@gmail.com'
 
-  fetch(`http://localhost:5000/getUser/${nsender}`,{
+  fetch(`http://192.168.35.195:5000/getUser/${nsender}`,{
     method:"GET"
   })
   .then(res => res.json())
@@ -43,7 +43,7 @@ useEffect(()=>{
 
   //Fetching all The users
   useEffect(()=>{
-    fetch('http://localhost:5000/getAllUsers',{
+    fetch('http://192.168.35.195:5000/getAllUsers',{
       method:"GET"
     })
     .then(res => res.json())
@@ -62,7 +62,7 @@ useEffect(()=>{
     nreceiver = receiver.toLowerCase()+'@gmail.com'
  
 
-    fetch(`http://localhost:5000/getOldMessages/${nsender}/${nreceiver}`,{
+    fetch(`http://192.168.35.195:5000/getOldMessages/${nsender}/${nreceiver}`,{
       method:"GET",
       headers:{
         'Accept':'application/json',
