@@ -1,7 +1,7 @@
 # S-Message Front-end
 
-This is a chatting app.
-
+This is the front-end of a chatting app created in react.
+But its not responsive 😅.
 ## Available Scripts
 
 In the project directory, you can run:
